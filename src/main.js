@@ -18,6 +18,7 @@ Vue.use(VueMqtt, 'ws://broker.losant.com:80', {
 });
 Vue.config.productionTip = false
 
+
 new Vue({
   router,
   render: h => h(App)
