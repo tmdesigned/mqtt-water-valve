@@ -108,7 +108,7 @@ export default {
         },
         "time" : this.time
       };
-      let topic = "losant/5ccb82cf04156e0008b023b9/state";
+      let topic = "losant/" + this.getUrlVar( "device" ) +  "/state";
       this.$mqtt.publish( topic, JSON.stringify( state ) );
       this.lastUpdated = this.time;
       this.lastOpen = this.open;
@@ -118,6 +118,13 @@ export default {
     },
     random : function ( min, max ){
       return Math.floor( Math.random() * ( max - min + 1 ) + min );
+    },
+    getUrlVar : function( param ) {
+      var vars = {};
+      window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+          vars[key] = value;
+      });
+      return vars[ param ];
     }
   },
   
