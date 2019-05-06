@@ -37,6 +37,17 @@
     flex-basis: 20%;
 }
 
+fieldset {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+legend {
+    color: #fff;
+    padding: 2e;
+}
+
+
 span.parameter__label {
     text-transform: uppercase;
     font-size: 90%;
